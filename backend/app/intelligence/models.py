@@ -4,6 +4,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
+from app.intelligence.indexes.repository_index import RepositoryIndex
+
 
 @dataclass(slots=True)
 class FileNode:
@@ -46,3 +48,5 @@ class RepositoryState:
     ignored: list[Path] = field(default_factory=list)
 
     metadata: RepositoryMetadata | None = None
+
+    index: RepositoryIndex | None = None
