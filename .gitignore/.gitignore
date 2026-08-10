@@ -1,0 +1,54 @@
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual Environment
+.venv/
+
+# Environment Variables
+.env
+backend/.env
+
+# ============================================
+# Node / React
+# ============================================
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# SQLite
+*.db
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Build Output
+frontend/dist/
+
+# Vite Cache
+frontend/.vite/
+
+# Python Coverage
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+
+# Temporary
+*.tmp
+*.bak
