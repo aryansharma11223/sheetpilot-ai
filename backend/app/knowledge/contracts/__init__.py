@@ -1,4 +1,5 @@
-from .knowledge_item import KnowledgeCategory, KnowledgeItem
+from .knowledge_category import KnowledgeCategory
+from .knowledge_item import KnowledgeItem
 from .knowledge_repository import KnowledgeRepository
 
 __all__ = [
