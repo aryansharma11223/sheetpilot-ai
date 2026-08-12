@@ -255,6 +255,61 @@ These capabilities shall extend the Kernel without violating its responsibilitie
 
 ---
 
+# Kernel Internal Architecture
+
+The Kernel consists of two architectural layers:
+
+## Public Layer
+
+The Public Layer exposes the stable interface consumed by the rest of the platform.
+
+Only these files are considered part of the Kernel's public API.
+
+backend/kernel/
+├── __init__.py
+├── kernel.py
+├── interfaces.py
+└── bootstrap.py
+
+Future platform modules shall communicate only with the public Kernel API.
+
+Direct access to internal implementation components is prohibited.
+
+---
+
+## Internal Layer
+
+The Internal Layer contains implementation details that support the Kernel.
+
+These components are private to the Kernel and may evolve without affecting the public API.
+
+```text
+backend/kernel/internal/
+├── __init__.py
+├── registry.py
+├── lifecycle.py
+├── event_bus.py
+├── health.py
+├── dependency_validator.py
+└── startup.py
+```
+
+These modules are not intended to be imported directly by other platform modules.
+
+---
+
+## Encapsulation
+
+The Kernel is responsible for coordinating its internal components.
+
+Knowledge, Memory, Reasoning, Planning, Execution, and future platform modules shall never communicate directly with the Kernel's internal implementation.
+
+Instead, all interaction shall occur through documented public interfaces.
+
+This separation preserves loose coupling, improves maintainability, and allows the Kernel implementation to evolve without impacting dependent modules.
+
+---
+
 # Success Criteria
 
 The Kernel contract is considered fulfilled when:
