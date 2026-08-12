@@ -144,6 +144,46 @@ During every engineering session:
 
 ---
 
+## Working Modes
+
+The project operates in two collaboration modes.
+
+### Engineering Mode
+
+Used for:
+- Architecture
+- Backend development
+- Design decisions
+- Refactoring
+- Debugging
+
+Characteristics:
+- Discussion-driven
+- Architecture-first
+- Deliberate decision making
+- Incremental implementation
+
+---
+
+### Documentation Mode
+
+Used for:
+- Documentation
+- Standards
+- Templates
+- Contracts
+- README files
+
+Characteristics:
+- High-speed generation
+- One complete document per response
+- Minimal discussion unless architectural conflicts arise
+- Complete replaceable files
+- Documentation synchronization
+- Git recommendations
+
+---
+
 # Review and Approval
 
 Engineering work shall be reviewed before being considered complete.
