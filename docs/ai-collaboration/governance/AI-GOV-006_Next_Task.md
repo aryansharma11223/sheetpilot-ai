@@ -1,167 +1,84 @@
-# AEVON
-
-# AI-GOV-006 — Next Task
+# Next Task
 
 ---
 
-**Document ID:** AI-GOV-006
+## Current Objective
 
-**Title:** Next Task
-
-**Version:** 1.0
-
-**Status:** Active
-
-**Owner:** Chief Architect
-
-**Classification:** AI Collaboration Governance
-
-**Author:** AEVON Engineering Team
-
-**Approved By:** Pending
-
-**Last Updated:** YYYY-MM-DD
+Begin Milestone 4 — Repository Foundation.
 
 ---
 
-# Purpose
+## Goal
 
-This document defines the immediate engineering objective for the next AI or engineering session.
+Establish the initial backend project structure that will support future development of AEVON.
 
-Its purpose is to provide a clear starting point for continuing development without requiring the next contributor to reconstruct previous discussions or decisions.
-
-This document is expected to be updated whenever the active engineering objective changes.
+The objective is to create a clean, scalable, and maintainable engineering foundation before implementing application features.
 
 ---
 
-# Scope
+## Deliverables
 
-This document defines:
-
-- The immediate engineering task.
-- The objective of the task.
-- Required prerequisites.
-- Expected deliverables.
-- Completion criteria.
-- Dependencies.
-- Important notes for the next engineering session.
-
-This document does not define the overall project state, project history, engineering governance, or migration procedures.
+- Backend directory structure
+- Source code layout
+- Configuration framework
+- Dependency management
+- Testing structure
+- Bootstrap entry point
+- Initial project documentation
 
 ---
 
-# Current Engineering Objective
+## Success Criteria
 
-Record the single engineering objective that should be completed next.
+The milestone will be considered complete when:
 
-The objective should be:
-
-- Clear.
-- Actionable.
-- Measurable.
-- Limited in scope.
-
-Only one primary objective should be recorded at any time.
+- Repository structure has been established.
+- Backend project initializes successfully.
+- Development environment supports implementation.
+- Initial project skeleton is operational.
 
 ---
 
-# Background
+## Working Mode
 
-Provide only the context required to understand the current task.
+Engineering Mode
 
-Avoid repeating information already documented elsewhere.
+Workflow:
 
-Reference other governance documents where appropriate.
+Architecture
 
----
+↓
 
-# Prerequisites
+Discussion
 
-Identify any work that must already be complete before beginning this task.
+↓
 
-Examples include:
+Design
 
-- Completed milestones.
-- Approved designs.
-- Available documentation.
-- Required engineering decisions.
+↓
 
----
+Implementation
 
-# Deliverables
+↓
 
-List the expected outputs of the task.
+Testing
 
-Examples:
+↓
 
-- Source code.
-- Documentation.
-- Tests.
-- Architecture updates.
-- Repository changes.
+Documentation Update
 
-Deliverables should be concrete and verifiable.
+↓
+
+Git Commit
 
 ---
 
-# Completion Criteria
+## Notes
 
-Define the conditions that must be satisfied before the task can be considered complete.
+Documentation shall support implementation rather than precede it.
 
-Examples:
-
-- Implementation completed.
-- Documentation updated.
-- Review completed.
-- Human approval obtained.
-- Verification passed.
+New documentation should only be created when required to support engineering activities or record architectural decisions.
 
 ---
 
-# Dependencies
-
-Record any dependencies that may affect completion of the task.
-
-Include:
-
-- Internal dependencies.
-- External dependencies.
-- Required approvals.
-- Technical constraints.
-
-If no dependencies exist, explicitly state that none are currently known.
-
----
-
-# Notes for the Next Session
-
-Provide concise guidance that will help the next AI or engineer continue work efficiently.
-
-Include only information that is directly relevant to the current engineering objective.
-
-Avoid historical discussion or unrelated observations.
-
----
-
-# Update Guidelines
-
-Whenever this document is updated:
-
-- Maintain only one active engineering objective.
-- Remove completed work.
-- Keep the document concise.
-- Update completion criteria as necessary.
-- Ensure consistency with AI-GOV-005 — Current State.
-
----
-
-# Related Documents
-
-- AI-GOV-000 — Read First
-- AI-GOV-004 — Context for New AI
-- AI-GOV-005 — Current State
-- AI-GOV-007 — Migration Guide
-
----
-
-**End of Document**
+**Next Milestone:** Repository Foundation
