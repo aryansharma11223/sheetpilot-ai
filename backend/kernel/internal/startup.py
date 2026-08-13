@@ -138,20 +138,15 @@ class StartupCoordinator:
         """
         Validate dependencies declared by registered components.
 
-        Components that do not expose dependency declarations are
-        treated as having no declared dependencies.
+        Every registered Kernel component is required to expose
+        its dependencies through the formal KernelComponent
+        dependency contract.
         """
 
         declarations = []
 
         for component in self._registry.all():
-            component_dependencies = getattr(
-                component,
-                "dependencies",
-                (),
-            )
-
-            declarations.extend(component_dependencies)
+            declarations.extend(component.dependencies)
 
         self._dependency_validator.validate(declarations)
 

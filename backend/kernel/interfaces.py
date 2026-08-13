@@ -8,6 +8,7 @@ This module defines the contracts used by the AEVON Kernel.
 
 Responsibilities:
 - Define the lifecycle contract for Kernel components.
+- Define the component dependency contract.
 - Define the component registry contract.
 - Define the event bus contract.
 - Define the health inspection contract.
@@ -20,8 +21,9 @@ Concrete implementations belong to the Kernel internal layer.
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Any, Callable, Iterable
+from typing import Any, Callable
 
 from app.core.metadata import ComponentMetadata
 from app.core.startup import StartupState
@@ -35,6 +37,12 @@ from app.core.startup import StartupState
 class KernelComponent(ABC):
     """
     Base contract for a component managed by the AEVON Kernel.
+
+    Every Kernel component explicitly exposes:
+    - Component metadata.
+    - Current lifecycle state.
+    - Declared Kernel dependencies.
+    - Lifecycle operations.
     """
 
     @property
@@ -47,6 +55,18 @@ class KernelComponent(ABC):
     @abstractmethod
     def state(self) -> StartupState:
         """Return the current component lifecycle state."""
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def dependencies(self) -> Iterable[DependencyDeclaration]:
+        """
+        Return dependencies declared by the component.
+
+        Dependencies are represented explicitly so the Kernel
+        startup coordinator can validate them before the platform
+        becomes ready.
+        """
         raise NotImplementedError
 
     @abstractmethod
