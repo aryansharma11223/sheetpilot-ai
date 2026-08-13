@@ -20,6 +20,10 @@ class EngineerResponse(BaseModel):
 
     repository_scanned: bool = False
 
+    context_built: bool = False
+
+    context_sources: int = 0
+
     plan_created: bool = False
 
     execution_completed: bool = False

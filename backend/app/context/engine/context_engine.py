@@ -4,63 +4,74 @@ AEVON
 
 Context Engine
 ===============================================================================
+
+Purpose:
+    Public orchestration boundary for context retrieval.
+
+Architecture:
+
+    ContextEngine
+         |
+         v
+    ContextBuilder
+         |
+         +-- KnowledgeSource
+         +-- RepositorySource
+         +-- MemorySource
+
+The Context Engine owns the context-building workflow while
+individual Context Sources remain responsible for collecting
+their own context.
+===============================================================================
 """
 
 from __future__ import annotations
 
-from pathlib import Path
-
+from app.context.context_builder import ContextBuilder
 from app.context.contracts import (
     ContextRequest,
     ContextResult,
-    ContextSource,
-    ContextSourceType,
 )
-from app.knowledge.cache import CacheManager
-from app.knowledge.search import RepositorySearcher
 
 
 class ContextEngine:
     """
-    Retrieves relevant context from the knowledge repository.
+    Public orchestration boundary for AEVON context retrieval.
+
+    The Context Engine delegates source collection to ContextBuilder.
+    It intentionally does not implement source-specific retrieval logic.
     """
 
     def __init__(self) -> None:
-
-        self._cache = CacheManager()
-        self._searcher = RepositorySearcher()
+        self._builder = ContextBuilder()
 
     def run(
         self,
         request: ContextRequest,
     ) -> ContextResult:
+        """
+        Build execution context for the supplied request.
+        """
 
-        repository = self._cache.load_or_build(
-            Path("../docs"),
-        )
+        return self._builder.build(request)
 
-        search_results = self._searcher.search(
-            repository,
-            request.prompt,
-        )
+    @property
+    def builder(self) -> ContextBuilder:
+        """
+        Return the underlying context builder.
+        """
 
-        sources: list[ContextSource] = []
+        return self._builder
 
-        for result in search_results:
-            item = result.item
+    @property
+    def source_count(self) -> int:
+        """
+        Return the number of registered context sources.
+        """
 
-            sources.append(
-                ContextSource(
-                    id=item.id,
-                    title=item.title,
-                    source_type=ContextSourceType.KNOWLEDGE,
-                    path=item.path,
-                    content=item.content,
-                    score=result.score,
-                )
-            )
+        return self._builder.source_count
 
-        return ContextResult(
-            request=request,
-            sources=sources,
-        )
+
+__all__ = [
+    "ContextEngine",
+]
