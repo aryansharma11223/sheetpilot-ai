@@ -5,29 +5,35 @@ AEVON
 Context Engine
 ===============================================================================
 
-Purpose:
-    Public orchestration boundary for context retrieval.
+Purpose
+-------
+Build execution context for an engineering request.
 
-Architecture:
+The Context Engine delegates context collection to ContextBuilder.
+It does not contain source-specific retrieval logic.
 
+Architecture
+
+    ContextRequest
+          │
+          ▼
     ContextEngine
-         |
-         v
+          │
+          ▼
     ContextBuilder
-         |
-         +-- KnowledgeSource
-         +-- RepositorySource
-         +-- MemorySource
-
-The Context Engine owns the context-building workflow while
-individual Context Sources remain responsible for collecting
-their own context.
+      ┌───┼───────────────┐
+      ▼   ▼               ▼
+ Knowledge Repository   Memory
+ Source    Source       Source
+          │
+          ▼
+     ContextResult
 ===============================================================================
 """
 
 from __future__ import annotations
 
-from app.context.context_builder import ContextBuilder
+from app.context.builders import ContextBuilder
 from app.context.contracts import (
     ContextRequest,
     ContextResult,
@@ -36,14 +42,21 @@ from app.context.contracts import (
 
 class ContextEngine:
     """
-    Public orchestration boundary for AEVON context retrieval.
+    Public orchestration entry point for context construction.
 
-    The Context Engine delegates source collection to ContextBuilder.
-    It intentionally does not implement source-specific retrieval logic.
+    The engine delegates source collection to ContextBuilder and
+    returns the resulting ContextResult.
     """
 
     def __init__(self) -> None:
         self._builder = ContextBuilder()
+
+    @property
+    def builder(self) -> ContextBuilder:
+        """
+        Return the underlying context builder.
+        """
+        return self._builder
 
     def run(
         self,
@@ -52,24 +65,7 @@ class ContextEngine:
         """
         Build execution context for the supplied request.
         """
-
         return self._builder.build(request)
-
-    @property
-    def builder(self) -> ContextBuilder:
-        """
-        Return the underlying context builder.
-        """
-
-        return self._builder
-
-    @property
-    def source_count(self) -> int:
-        """
-        Return the number of registered context sources.
-        """
-
-        return self._builder.source_count
 
 
 __all__ = [
