@@ -11,6 +11,7 @@ Responsibilities:
 - Define the component registry contract.
 - Define the event bus contract.
 - Define the health inspection contract.
+- Define the dependency validation contract.
 
 This module contains interfaces only.
 Concrete implementations belong to the Kernel internal layer.
@@ -19,6 +20,7 @@ Concrete implementations belong to the Kernel internal layer.
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
 from typing import Any, Callable, Iterable
 
 from app.core.metadata import ComponentMetadata
@@ -169,6 +171,45 @@ class KernelEventBus(ABC):
 
 
 ###############################################################################
+# Kernel Dependency Validation
+###############################################################################
+
+
+@dataclass(frozen=True, slots=True)
+class DependencyDeclaration:
+    """
+    Describes a dependency that must satisfy Kernel dependency rules.
+    """
+
+    source: str
+    target: str
+    documented: bool
+    necessary: bool
+    event_possible: bool
+    interface_based: bool
+    ownership_valid: bool
+
+
+class KernelDependencyValidator(ABC):
+    """
+    Contract for validating Kernel dependency declarations.
+    """
+
+    @abstractmethod
+    def validate(
+        self,
+        dependencies: Iterable[DependencyDeclaration],
+    ) -> None:
+        """
+        Validate Kernel dependency declarations.
+
+        Raises:
+            ValueError: If a dependency violates Kernel dependency rules.
+        """
+        raise NotImplementedError
+
+
+###############################################################################
 # Kernel Health
 ###############################################################################
 
@@ -196,9 +237,11 @@ class KernelHealth(ABC):
 
 __all__ = [
     "EventHandler",
+    "DependencyDeclaration",
     "KernelComponent",
     "KernelRegistry",
     "KernelLifecycle",
     "KernelEventBus",
     "KernelHealth",
+    "KernelDependencyValidator",
 ]
