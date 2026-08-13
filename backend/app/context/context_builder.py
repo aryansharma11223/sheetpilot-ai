@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Context Builder
 ===============================================================================
@@ -14,17 +14,15 @@ from app.context.contracts import (
     ContextRequest,
     ContextResult,
 )
-
 from app.context.sources import (
     BaseContextSource,
     KnowledgeSource,
-    RepositorySource,
     MemorySource,
+    RepositorySource,
 )
 
 
 class ContextBuilder:
-
     def __init__(self) -> None:
 
         self._sources: list[BaseContextSource] = []

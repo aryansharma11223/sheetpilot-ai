@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Path Manager
 ===============================================================================
@@ -13,15 +13,15 @@ from pathlib import Path
 
 class PathManager:
     """
-    Central location for all SheetPilot paths.
+    Central location for all AEVON paths.
     """
 
-    _WORKSPACE = Path(".sheetpilot")
+    _WORKSPACE = Path(".AEVON")
 
     @classmethod
     def workspace(cls) -> Path:
         """
-        Root SheetPilot workspace.
+        Root AEVON workspace.
         """
         cls._WORKSPACE.mkdir(
             parents=True,

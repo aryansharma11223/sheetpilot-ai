@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Verification Launcher
 
@@ -18,14 +18,13 @@ def main() -> None:
     results = runner.run_all()
 
     print("=" * 60)
-    print("SheetPilot Verification Report")
+    print("AEVON Verification Report")
     print("=" * 60)
 
     passed = 0
     failed = 0
 
     for result in results:
-
         print(f"\n[{result.status.value}] {result.subsystem}")
 
         for message in result.messages:

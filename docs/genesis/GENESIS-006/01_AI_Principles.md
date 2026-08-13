@@ -334,7 +334,7 @@ AI systems shall prioritize:
 
 # Engineering Values
 
-The AEVON AI Engineering Framework values:
+The AEVON Engineering Framework values:
 
 - Integrity
 - Transparency

@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Repository Snapshot Contract
 ===============================================================================
@@ -8,9 +8,8 @@ Repository Snapshot Contract
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Field
-
 from app.knowledge.contracts import KnowledgeItem
+from pydantic import BaseModel, Field
 
 from .snapshot_metadata import SnapshotMetadata
 

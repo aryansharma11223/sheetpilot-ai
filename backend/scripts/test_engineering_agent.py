@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Engineering Agent Test
 ===============================================================================
@@ -12,9 +12,7 @@ from app.agents.engineering_agent import EngineeringAgent
 
 def main():
 
-    request = EngineerRequest(
-        prompt="Add Excel import support."
-    )
+    request = EngineerRequest(prompt="Add Excel import support.")
 
     agent = EngineeringAgent()
 

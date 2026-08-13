@@ -30,7 +30,7 @@
 
 Artificial Intelligence is no longer a supporting technology—it is becoming a core engineering discipline.
 
-Traditional software engineering frameworks define how humans build software. The AEVON AI Engineering Framework extends this paradigm by defining how Humans, Artificial Intelligence, and Autonomous Engineering Systems collaborate to design, develop, validate, deploy, operate, and continuously improve intelligent software systems.
+Traditional software engineering frameworks define how humans build software. The AEVON Engineering Framework extends this paradigm by defining how Humans, Artificial Intelligence, and Autonomous Engineering Systems collaborate to design, develop, validate, deploy, operate, and continuously improve intelligent software systems.
 
 This framework establishes the engineering principles, architecture, governance, standards, workflows, and operational models required to build trustworthy, scalable, explainable, and maintainable AI-native platforms.
 
@@ -159,18 +159,18 @@ The AI Engineering Framework shall:
 
 The framework consists of ten integrated engineering domains.
 
-| Document | Purpose |
-|----------|----------|
-| 01_AI_Principles | Engineering philosophy for AI |
-| 02_AI_Architecture | Architectural foundation for AI systems |
-| 03_Prompt_Engineering | Prompt design methodology |
-| 04_Context_Engineering | Context construction and optimization |
-| 05_AI_Memory_Framework | Persistent engineering memory |
-| 06_AI_Agents | Agent architecture and collaboration |
-| 07_AI_Governance | Governance and policy |
-| 08_AI_Quality | Validation and quality assurance |
-| 09_AI_Evolution | Continuous AI improvement |
-| 10_Lessons_Learned | Organizational AI knowledge |
+| Document               | Purpose                                 |
+| ---------------------- | --------------------------------------- |
+| 01_AI_Principles       | Engineering philosophy for AI           |
+| 02_AI_Architecture     | Architectural foundation for AI systems |
+| 03_Prompt_Engineering  | Prompt design methodology               |
+| 04_Context_Engineering | Context construction and optimization   |
+| 05_AI_Memory_Framework | Persistent engineering memory           |
+| 06_AI_Agents           | Agent architecture and collaboration    |
+| 07_AI_Governance       | Governance and policy                   |
+| 08_AI_Quality          | Validation and quality assurance        |
+| 09_AI_Evolution        | Continuous AI improvement               |
+| 10_Lessons_Learned     | Organizational AI knowledge             |
 
 ---
 
@@ -273,14 +273,14 @@ FORGE implements those principles through automation, orchestration, validation,
 
 # Roles and Responsibilities
 
-| Role | Responsibilities |
-|------|------------------|
-| Human Engineer | Engineering judgment, approvals, accountability |
-| AI Engineer | Prompt design, AI workflows, validation |
-| Domain Expert | Technical expertise and domain knowledge |
-| Architect | AI system architecture |
-| FORGE | AI orchestration, automation, governance, traceability |
-| Chief Architect | Strategic oversight and framework governance |
+| Role            | Responsibilities                                       |
+| --------------- | ------------------------------------------------------ |
+| Human Engineer  | Engineering judgment, approvals, accountability        |
+| AI Engineer     | Prompt design, AI workflows, validation                |
+| Domain Expert   | Technical expertise and domain knowledge               |
+| Architect       | AI system architecture                                 |
+| FORGE           | AI orchestration, automation, governance, traceability |
+| Chief Architect | Strategic oversight and framework governance           |
 
 ---
 

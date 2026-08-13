@@ -471,15 +471,15 @@ Each participant contributes to prompt evolution.
 
 # Roles and Responsibilities
 
-| Role | Responsibilities |
-|------|------------------|
-| Prompt Engineer | Design prompts |
-| AI Engineer | Optimize prompts |
-| Architect | Validate engineering alignment |
-| Domain Expert | Verify technical correctness |
-| QA Engineer | Test prompts |
-| FORGE | Prompt orchestration, version control, analytics |
-| Chief Architect | Governance and approval |
+| Role            | Responsibilities                                 |
+| --------------- | ------------------------------------------------ |
+| Prompt Engineer | Design prompts                                   |
+| AI Engineer     | Optimize prompts                                 |
+| Architect       | Validate engineering alignment                   |
+| Domain Expert   | Verify technical correctness                     |
+| QA Engineer     | Test prompts                                     |
+| FORGE           | Prompt orchestration, version control, analytics |
+| Chief Architect | Governance and approval                          |
 
 ---
 
@@ -552,7 +552,7 @@ Prompt Engineering transforms natural-language instructions into governed engine
 
 By applying software engineering disciplines such as modularity, version control, testing, governance, and lifecycle management to prompts, AEVON ensures that AI interactions remain predictable, maintainable, scalable, and continuously improving.
 
-This standard establishes Prompt Engineering as a core engineering discipline within the AEVON AI ecosystem.
+This standard establishes Prompt Engineering as a core engineering discipline within the AEVON ecosystem.
 
 ---
 

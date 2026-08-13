@@ -10,7 +10,7 @@ def main() -> None:
     repository = scanner.collect()
 
     print("\n" + "=" * 60)
-    print("          SHEETPILOT - REPOSITORY SCANNER")
+    print("          AEVON - REPOSITORY SCANNER")
     print("=" * 60)
 
     print(f"Repository Root : {repository.root}")

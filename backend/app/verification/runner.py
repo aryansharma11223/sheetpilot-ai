@@ -1,12 +1,17 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON Platform
 
 Module:
     Verification Runner
 
 Purpose:
     Coordinates all registered subsystem verifiers.
+
+Registered subsystems:
+- Core
+- Knowledge
+- Kernel
 ===============================================================================
 """
 
@@ -16,6 +21,7 @@ from app.verification.contracts import VerificationResult
 from app.verification.verifiers import (
     BaseVerifier,
     CoreVerifier,
+    KernelVerifier,
     KnowledgeVerifier,
 )
 
@@ -30,22 +36,34 @@ class VerificationRunner:
 
         self.register(CoreVerifier())
         self.register(KnowledgeVerifier())
+        self.register(KernelVerifier())
 
     def register(self, verifier: BaseVerifier) -> None:
         """
         Register a verifier.
         """
+
         self._verifiers.append(verifier)
 
     @property
     def verifier_count(self) -> int:
         """
-        Number of registered verifiers.
+        Return the number of registered verifiers.
         """
+
         return len(self._verifiers)
 
     def run_all(self) -> list[VerificationResult]:
         """
         Execute all registered verifiers.
         """
-        return [verifier.run() for verifier in self._verifiers]
+
+        return [
+            verifier.run()
+            for verifier in self._verifiers
+        ]
+
+
+__all__ = [
+    "VerificationRunner",
+]

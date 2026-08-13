@@ -8,7 +8,8 @@ This module provides the public Kernel orchestration object.
 
 Responsibilities:
 - Compose the Kernel's internal subsystems.
-- Provide a single entry point to Kernel infrastructure.
+- Provide a single public entry point to Kernel infrastructure.
+- Provide high-level lifecycle operations.
 - Expose lifecycle, registry, dependency validation,
   startup, event, and health capabilities.
 - Keep subsystem ownership centralized.
@@ -102,6 +103,42 @@ class Kernel:
         )
 
     ###########################################################################
+    # High-Level Lifecycle
+    ###########################################################################
+
+    def initialize(self) -> None:
+        """
+        Initialize the Kernel.
+
+        Startup coordination is delegated to the internal
+        StartupCoordinator.
+
+        The Kernel reaches READY only after successful dependency
+        validation.
+        """
+
+        self._startup.initialize()
+
+    def start(self) -> None:
+        """
+        Start the Kernel.
+
+        The Kernel must already be READY before it can start.
+        """
+
+        self._startup.start()
+
+    def stop(self) -> None:
+        """
+        Stop the Kernel.
+
+        Lifecycle transition handling remains delegated to the
+        internal lifecycle subsystem.
+        """
+
+        self._startup.stop()
+
+    ###########################################################################
     # Lifecycle
     ###########################################################################
 
@@ -110,6 +147,7 @@ class Kernel:
         """
         Return the Kernel lifecycle manager.
         """
+
         return self._lifecycle
 
     ###########################################################################
@@ -121,6 +159,7 @@ class Kernel:
         """
         Return the Kernel component registry.
         """
+
         return self._registry
 
     ###########################################################################
@@ -132,6 +171,7 @@ class Kernel:
         """
         Return the Kernel dependency validator.
         """
+
         return self._dependency_validator
 
     ###########################################################################
@@ -143,6 +183,7 @@ class Kernel:
         """
         Return the Kernel startup coordinator.
         """
+
         return self._startup
 
     ###########################################################################
@@ -154,6 +195,7 @@ class Kernel:
         """
         Return the Kernel event bus.
         """
+
         return self._event_bus
 
     ###########################################################################
@@ -165,6 +207,7 @@ class Kernel:
         """
         Return the Kernel health inspector.
         """
+
         return self._health
 
 

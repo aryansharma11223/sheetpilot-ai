@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Repository Searcher
 ===============================================================================
@@ -32,7 +32,6 @@ class RepositorySearcher:
         results: list[SearchResult] = []
 
         for item in repository.items:
-
             if (
                 query == item.id.lower()
                 or query == item.title.lower()

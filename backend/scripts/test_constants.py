@@ -9,7 +9,7 @@ from app.core.constants import (
 )
 
 print("=" * 60)
-print("SheetPilot Constants Test")
+print("AEVON Constants Test")
 print("=" * 60)
 
 print(APP_NAME)

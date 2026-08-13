@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Module:
     Core Verifier
@@ -17,7 +17,6 @@ import time
 from app.core.config import settings
 from app.core.constants import APP_NAME
 from app.core.paths import paths
-
 from app.verification.contracts import (
     VerificationResult,
     VerificationStatus,

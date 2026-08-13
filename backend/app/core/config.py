@@ -1,5 +1,5 @@
 """
-SheetPilot
+AEVON
 
 Capability : CORE-001
 Module     : Configuration
@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     # Application
     # --------------------
 
-    app_name: str = Field(default="SheetPilot")
+    app_name: str = Field(default="AEVON")
 
     app_version: str = Field(default="0.1.0")
 
@@ -49,7 +49,7 @@ class Settings(BaseSettings):
     # Database
     # --------------------
 
-    database_url: str = "sqlite:///memory/sheetpilot.db"
+    database_url: str = "sqlite:///memory/AEVON.db"
 
     # --------------------
     # Repository

@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Module:
     Knowledge Indexer
@@ -48,12 +48,10 @@ class KnowledgeIndexer:
             return repository
 
         for file_path in directory.rglob("*"):
-
             if not file_path.is_file():
                 continue
 
             for indexer in self._indexers:
-
                 if not indexer.supports(file_path):
                     continue
 

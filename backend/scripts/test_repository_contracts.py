@@ -1,6 +1,6 @@
 from app.intelligence.contracts import RepositorySnapshot
 
-snapshot = RepositorySnapshot(root="D:/SheetPilot AI")
+snapshot = RepositorySnapshot(root="D:/AEVON")
 
 print(snapshot)
 

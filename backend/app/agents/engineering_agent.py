@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Module:
     Engineering Agent
@@ -27,7 +27,7 @@ from app.agents.stages import ObserverStage
 
 class EngineeringAgent:
     """
-    Main orchestrator for SheetPilot.
+    Main orchestrator for AEVON.
 
     Current Workflow
 

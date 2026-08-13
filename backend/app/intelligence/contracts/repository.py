@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 INT-001 : Repository Contract
 ===============================================================================
@@ -36,8 +36,6 @@ class RepositorySnapshot(BaseModel):
 
     dependencies: list[DependencyInfo] = Field(default_factory=list)
 
-    statistics: RepositoryStatistics = Field(
-        default_factory=RepositoryStatistics
-    )
+    statistics: RepositoryStatistics = Field(default_factory=RepositoryStatistics)
 
     scanned_at: datetime = Field(default_factory=datetime.utcnow)

@@ -1,5 +1,5 @@
 """
-SheetPilot AI
+AEVON
 Core Package
 """
 

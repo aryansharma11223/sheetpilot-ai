@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Context Engine
 ===============================================================================
@@ -47,7 +47,6 @@ class ContextEngine:
         sources: list[ContextSource] = []
 
         for result in search_results:
-
             item = result.item
 
             sources.append(

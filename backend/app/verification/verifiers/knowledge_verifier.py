@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Module:
     Knowledge Verifier
@@ -44,15 +44,11 @@ class KnowledgeVerifier(BaseVerifier):
             indexer = KnowledgeIndexer()
             messages.append("KnowledgeIndexer created.")
 
-            messages.append(
-                f"Registered Indexers: {indexer.indexer_count}"
-            )
+            messages.append(f"Registered Indexers: {indexer.indexer_count}")
 
             repo = indexer.index_directory(Path("../docs"))
 
-            messages.append(
-                f"Knowledge Items Indexed: {repo.count}"
-            )
+            messages.append(f"Knowledge Items Indexed: {repo.count}")
 
             status = VerificationStatus.PASS
 

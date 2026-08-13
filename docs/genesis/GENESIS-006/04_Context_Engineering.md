@@ -420,14 +420,14 @@ Every participant contributes to improving contextual intelligence.
 
 # Roles and Responsibilities
 
-| Role | Responsibilities |
-|------|------------------|
-| Human Engineer | Define task objectives and validate context |
-| AI Engineer | Design retrieval and assembly strategies |
-| Knowledge Curator | Maintain trusted knowledge sources |
-| Architect | Define context architecture |
-| FORGE | Retrieve, assemble, rank, validate, and optimize context |
-| Chief Architect | Governance and strategic oversight |
+| Role              | Responsibilities                                         |
+| ----------------- | -------------------------------------------------------- |
+| Human Engineer    | Define task objectives and validate context              |
+| AI Engineer       | Design retrieval and assembly strategies                 |
+| Knowledge Curator | Maintain trusted knowledge sources                       |
+| Architect         | Define context architecture                              |
+| FORGE             | Retrieve, assemble, rank, validate, and optimize context |
+| Chief Architect   | Governance and strategic oversight                       |
 
 ---
 
@@ -503,7 +503,7 @@ Context Engineering transforms raw engineering information into structured intel
 
 By treating context as a governed engineering asset, AEVON ensures that every AI interaction is informed by the right information, delivered at the right time, in the right structure.
 
-This standard establishes Context Engineering as one of the most critical disciplines within the AEVON AI ecosystem, enabling reliable reasoning, consistent outputs, and high-confidence engineering decisions.
+This standard establishes Context Engineering as one of the most critical disciplines within the AEVON ecosystem, enabling reliable reasoning, consistent outputs, and high-confidence engineering decisions.
 
 ---
 

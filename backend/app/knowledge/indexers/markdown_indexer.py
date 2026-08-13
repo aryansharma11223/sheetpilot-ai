@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Module:
     Markdown Indexer
@@ -48,7 +48,5 @@ class MarkdownIndexer(BaseIndexer):
             category=KnowledgeCategory.GENERAL,
             path=path,
             content=content,
-            last_modified=datetime.fromtimestamp(
-                path.stat().st_mtime
-            ),
+            last_modified=datetime.fromtimestamp(path.stat().st_mtime),
         )

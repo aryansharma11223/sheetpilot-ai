@@ -5,13 +5,13 @@ AEVON Kernel
 Kernel Bootstrap
 
 This module provides the controlled entry point for constructing
-and starting the AEVON Kernel.
+and initializing the AEVON Kernel.
 
 Responsibilities:
 - Collect the initial runtime context.
 - Construct the Core StartupContext.
 - Construct the Kernel.
-- Coordinate the initial Kernel startup sequence.
+- Coordinate the initial Kernel initialization sequence.
 
 Bootstrap does NOT:
 - Implement lifecycle state transitions.
@@ -20,19 +20,24 @@ Bootstrap does NOT:
 - Implement event routing.
 - Implement health evaluation.
 - Execute business or intelligence logic.
+- Start the Kernel into the RUNNING state automatically.
 
 Those responsibilities belong to the Core and Kernel layers.
 
 Architecture:
 
     Bootstrap
-        ?
+        |
+        v
     StartupContext
-        ?
+        |
+        v
     Kernel
-        ?
+        |
+        v
     Kernel Startup Coordinator
-        ?
+        |
+        v
     Kernel Subsystems
 """
 
@@ -107,8 +112,12 @@ def bootstrap_kernel(
     """
     Construct and initialize the AEVON Kernel.
 
-    The Kernel is returned after successful initialization and
-    dependency validation.
+    Bootstrap performs initialization and dependency validation,
+    then returns the Kernel in the READY lifecycle state.
+
+    Bootstrap deliberately does not transition the Kernel into
+    the RUNNING state. The caller controls that transition through
+    the public Kernel lifecycle API.
 
     Args:
         context:
@@ -125,7 +134,7 @@ def bootstrap_kernel(
 
     kernel = create_kernel(context)
 
-    kernel.startup.initialize()
+    kernel.initialize()
 
     return kernel
 

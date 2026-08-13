@@ -1,7 +1,7 @@
 from app.core.paths import paths
 
 print("=" * 60)
-print("SheetPilot Path Manager")
+print("AEVON Path Manager")
 print("=" * 60)
 
 print(f"Project Root : {paths.project_root}")

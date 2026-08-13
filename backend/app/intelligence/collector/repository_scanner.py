@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 INT-001 : Repository Scanner
 ===============================================================================
@@ -57,14 +57,12 @@ class RepositoryScanner:
         snapshot = RepositorySnapshot(root=str(self.root))
 
         for item in self.root.rglob("*"):
-
             if self._should_ignore(item):
                 continue
 
             relative_path = item.relative_to(self.root)
 
             if item.is_dir():
-
                 snapshot.folders.append(
                     FolderInfo(
                         name=item.name,
@@ -74,7 +72,6 @@ class RepositoryScanner:
                 )
 
             elif item.is_file():
-
                 extension = item.suffix.lower()
 
                 snapshot.files.append(

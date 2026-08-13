@@ -1,7 +1,7 @@
 """
 ===============================================================================
 
-SheetPilot AI
+AEVON
 
 Capability : CORE-002
 Module     : Logger
@@ -10,7 +10,7 @@ Status     : Development
 
 Description
 -----------
-Centralized logging service used throughout SheetPilot.
+Centralized logging service used throughout AEVON.
 
 ===============================================================================
 """
@@ -50,7 +50,7 @@ log_directory = paths.logs
     console_handler.setFormatter(formatter)
 
     file_handler = RotatingFileHandler(
-        log_directory / "sheetpilot.log",
+        log_directory / "AEVON.log",
         maxBytes=5 * 1024 * 1024,
         backupCount=5,
         encoding="utf-8",

@@ -1,5 +1,5 @@
 """
-Public exports for SheetPilot constants.
+Public exports for AEVON constants.
 """
 
 from .ai_provider import AIProvider

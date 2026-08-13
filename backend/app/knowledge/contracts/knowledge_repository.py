@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Module:
     Knowledge Repository
@@ -40,11 +40,7 @@ class KnowledgeRepository(BaseModel):
         category: KnowledgeCategory,
     ) -> list[KnowledgeItem]:
         """Return all knowledge items of a category."""
-        return [
-            item
-            for item in self.items
-            if item.category == category
-        ]
+        return [item for item in self.items if item.category == category]
 
     @property
     def count(self) -> int:

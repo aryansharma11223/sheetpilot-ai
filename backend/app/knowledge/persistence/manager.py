@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 Persistence Manager
 ===============================================================================
@@ -44,7 +44,6 @@ class PersistenceManager:
     def load(
         self,
         source: Path,
-        
     ) -> RepositorySnapshot:
 
         return self._storage.load(source)

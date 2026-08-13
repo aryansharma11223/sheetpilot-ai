@@ -1,6 +1,6 @@
 """
 ===============================================================================
-SheetPilot AI
+AEVON
 
 JSON Storage Provider
 ===============================================================================
@@ -17,7 +17,6 @@ from .base_storage import BaseStorage
 
 
 class JsonStorage(BaseStorage):
-
     @property
     def name(self) -> str:
         return "JSON"

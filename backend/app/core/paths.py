@@ -1,7 +1,7 @@
 """
 ===============================================================================
 
-SheetPilot AI
+AEVON
 
 Capability : CORE-003
 Module     : Path Manager
@@ -10,7 +10,7 @@ Status     : Development
 
 Description
 -----------
-Centralized path management for the SheetPilot platform.
+Centralized path management for the AEVON platform.
 
 ===============================================================================
 """
